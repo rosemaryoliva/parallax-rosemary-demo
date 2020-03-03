@@ -1,0 +1,478 @@
+/* Scroll example 
+#container {
+    margin: 55vh 0;
+    padding: 50px;
+    outline: 1px dashed orange;
+}
+
+#blk {
+    padding: 10px;
+    border: 1px solid black;
+    font-family: Helvetica;
+}*/
+
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {margin: 0;}
+
+.plax {
+      min-height: 100vh;
+      background: transparent;
+      position: relative;
+    }
+
+.title-main{
+  font-family: 'Odibee Sans', cursive;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding-top: 50%;
+  transform: translateY(-50%);
+  font-size: 14vw;
+  color: white;
+  font-weight: 400;
+}
+
+h3{
+  font-family: 'Pacifico';
+  top: 6%;
+  color: lightblue;
+  opacity: 80%;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-bottom: 2%;
+  transform: translateY(-50%);
+  font-size: 5vw;
+}
+
+.title-right{
+  font-size: 10vw;
+  font-family: 'Odibee Sans', cursive;
+  display: block;
+  float: right;
+  margin: -10%;
+  color: white;
+  padding-top: 10%;
+  transform: translateY(-50%);
+}
+
+
+.box {
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  opacity: 70%;
+  display: block;
+  margin: 10%;
+  float: right;
+  transform: translateY(-50%);
+}
+
+.title-left{
+  font-size: 10vw;
+  font-family: 'Odibee Sans', cursive;
+  display: block;
+  float: left;
+  margin: 5%;
+  color: white;
+  padding-top: 20%;
+  transform: translateY(-50%);
+
+}
+
+
+p{
+  font-size: 2vw;
+  font-family: 'Odibee Sans', cursive;
+  display: block;
+  color:white;
+  margin-top: 20px;
+  padding: 10%;
+}
+
+.box-left{
+  height: 400px;
+  width: 400px;
+  opacity: 70%;
+  background-color: red;
+  display: block;
+  margin: 10%;
+  float: left;
+  transform: translateY(-50%);
+}
+
+
+.gallery{
+  font-family: 'Odibee Sans', cursive;
+  color: darkgrey;
+  position: relative;
+  padding-left: 13%;
+  margin-bottom: 45px;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+
+.container {
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 1140px auto;
+}
+  
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+}
+.item:hover {
+  flex: 7;
+}
+
+.item-1 {
+  background-image: url("../images/wheel.png");
+  border: 2px solid black;
+}
+
+.item-2 {
+  background-image: url("../images/bike-1.png");
+  border: 2px solid black;
+}
+
+.item-3 {
+  background-image: url("../images/bike-2.png");
+  border: 2px solid black;
+}
+
+.item-4 {
+  background-image: url("../images/bike-3.png");
+  border: 2px solid black;
+}
+
+.item-5 {
+  background-image: url("../images/bike-4.png");
+  border: 2px solid black;
+}
+.last-paragraph{
+  padding-bottom: 5px;
+  max-width: 450px;
+}
+
+
+
+
+/* scroll arrow*/
+
+#wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30%;
+  margin: 0%;
+}
+#wrapper-inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+#scroll-down {
+  display: block;
+  position: absolute;
+  padding-top: 79px;
+  text-align: center;
+}
+.arrow-down {
+  display: block;
+  margin: 0 auto;
+  width: 10px;
+  height: 38px;
+}
+.arrow-down:after {
+  content: '';
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  behavior: url(-ms-transform.htc);
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+#scroll-title {
+  display: block;
+  color: white;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+#scroll-down::before {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -1px;
+  width: 4px;
+  height: 90px;
+  background: white;
+  content: ' ';
+}
+#scroll-down:hover::before {
+  -webkit-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  /* Safari 4+ */
+  -moz-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  /* Fx 5+ */
+  -o-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  /* Opera 12+ */
+  animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  /* IE 10+, Fx 29+ */
+}
+@-webkit-keyframes elasticus {
+  0% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+  50% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50.1% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+}
+@-moz-keyframes elasticus {
+  0% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+  50% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50.1% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+}
+@-o-keyframes elasticus {
+  0% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+  50% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50.1% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+}
+@keyframes elasticus {
+  0% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+  50% {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50.1% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+}
+#paschka {
+  display: block;
+  color: white;
+  font-size: 32px;
+  text-decoration: none;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  padding: 0px;
+  transition: all 0.1s ease;
+  background: #000;
+  height: 40px;
+  line-height: 30px;
+  vertical-align: middle;
+  width: 40px;
+  text-align: center;
+  border-radius: 5%;
+  bottom: 20px;
+  right: 20px;
+}
+#paschka:hover {
+  background: #232323;
+  transition: all 0.1s ease;
+  color: #f0f0f0;
+}
