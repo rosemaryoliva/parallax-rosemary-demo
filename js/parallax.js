@@ -19,16 +19,16 @@
 // });
 
 //this is where we apply opacity to the arrow
+$ (function 
+var controller = new ScrollMagic.Controller();
 
-$(document).ready(function(){
-    var controller = new ScrollMagic.Controller();
-    var ourSource = new ScrollMagic.Scene({
-      triggerElement: '#project-1'
-    })
-    .setClassToggle('#project-1', 'fade-in')
-    .addTo(controller);
-  });
-
+// create a scene
+new ScrollMagic.Scene({
+    duration: 100, // the scene should last for a scroll distance of 100px
+    offset: 50 // start this scene after scrolling for 50px
+})
+    .setPin('container') // pins the element for the the scene's duration
+    .addTo(controller); // assign the scene to the controller
 
   ;(function ( $, window, document, undefined ) {
 

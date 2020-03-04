@@ -33,22 +33,20 @@ body {margin: 0;}
   display: block;
   text-align: center;
   margin: 0;
-  padding-top: 50%;
+  padding-top: 500px;
   transform: translateY(-50%);
   font-size: 14vw;
   color: white;
   font-weight: 400;
 }
 
-h3{
+.title-2{
   font-family: 'Pacifico';
-  top: 6%;
   color: lightblue;
   opacity: 80%;
   position: relative;
   display: block;
   text-align: center;
-  margin-bottom: 2%;
   transform: translateY(-50%);
   font-size: 5vw;
 }
@@ -87,8 +85,9 @@ h3{
   transform: translateY(-50%);
 
 }
-
-
+.project{
+  display: none;
+}
 p{
   font-size: 2vw;
   font-family: 'Odibee Sans', cursive;
@@ -183,10 +182,11 @@ p{
 /* scroll arrow*/
 
 #wrapper {
+  left: 300px;
+  top: 20%;
   display: table;
   width: 100%;
   height: 100%;
-  padding-bottom: 30%;
   margin: 0%;
 }
 #wrapper-inner {
