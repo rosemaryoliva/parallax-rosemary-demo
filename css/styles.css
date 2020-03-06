@@ -29,11 +29,14 @@ body {margin: 0;}
     }
 
 .title-main{
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+  padding-top: 50%;
   font-family: 'Odibee Sans', cursive;
   display: block;
   text-align: center;
   margin: 0;
-  padding-top: 500px;
   transform: translateY(-50%);
   font-size: 14vw;
   color: white;
@@ -42,6 +45,7 @@ body {margin: 0;}
 
 .title-2{
   font-family: 'Pacifico';
+  padding-bottom: 30%;
   color: lightblue;
   opacity: 80%;
   position: relative;
@@ -56,24 +60,9 @@ body {margin: 0;}
   font-family: 'Odibee Sans', cursive;
   display: block;
   float: right;
-  margin: -10%;
   color: white;
-  padding-top: 10%;
   transform: translateY(-50%);
 }
-
-
-.box {
-  height: 400px;
-  width: 400px;
-  background-color: red;
-  opacity: 70%;
-  display: block;
-  margin: 10%;
-  float: right;
-  transform: translateY(-50%);
-}
-
 .title-left{
   font-size: 10vw;
   font-family: 'Odibee Sans', cursive;
@@ -83,30 +72,44 @@ body {margin: 0;}
   color: white;
   padding-top: 20%;
   transform: translateY(-50%);
+}
 
-}
-.project{
-  display: none;
-}
 p{
   font-size: 2vw;
   font-family: 'Odibee Sans', cursive;
   display: block;
   color:white;
-  margin-top: 20px;
   padding: 10%;
 }
+.box {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  opacity: 70%;
+  transform: translateY(-50%);
+}
 
-.box-left{
+
+.box-3{
   height: 400px;
   width: 400px;
   opacity: 70%;
   background-color: red;
   display: block;
-  margin: 10%;
-  float: left;
+   float: left;
   transform: translateY(-50%);
 }
+
+.box-3 {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  opacity: 70%;
+  transform: translateY(-50%);
+}
+
 
 
 .gallery{
@@ -120,6 +123,18 @@ p{
   color: #424242;
 }
 
+#scrollMagic{
+  opacity: 0;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+#scrollMagic.visible { 
+    opacity: 100;
+  }
 
 .container {
   padding: 75px 0;

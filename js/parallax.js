@@ -4,31 +4,39 @@
  * @license MIT (https://github.com/pixelcog/parallax.js/blob/master/LICENSE)
  */
 
- //Scroll Example//
-// $(function() {
-//     var controller = new ScrollMagic.Controller();
+$(function portfolioTransitionColor() {
+    var controller = new ScrollMagic.Controller();    
 
-//     var blockTween = new TweenMax.to('#blk', 1.5, {
-//     backgroundColor: 'red'
-// });
-//     var containerScene = new ScrollMagic.Scene({
-//     triggerElement: '#container'
-// })
-// .setTween(blockTween)
-// .addTo(controller);
-// });
+    new ScrollMagic.Scene({
+        triggerElement: "#activate",
+        triggerHook: 0.1, // show, when scrolled 10% into view
+        duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+        offset: 200 // move trigger to center of element
+    })
+    .setClassToggle("#scrollMagic", "visible") // add class to reveal
+    //.addIndicators({name: "reveal"}) // add indicators (requires plugin)
+    .addTo(controller);
+});
 
-//this is where we apply opacity to the arrow
-$ (function 
-var controller = new ScrollMagic.Controller();
 
-// create a scene
-new ScrollMagic.Scene({
-    duration: 100, // the scene should last for a scroll distance of 100px
-    offset: 50 // start this scene after scrolling for 50px
+$(function slideBox() {
+  var controller = new ScrollMagic.Controller();
+  //tween
+  var tween = TweenMax.staggerFromTo(".box", 2, {left: 700}, {left: 0, ease: Power3.easeOut}, 0.15);
+
+  // build scene
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger4", duration: 600,
+    triggerHook: 0.1, // show, when scrolled 10% into view
+    duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+    offset: 1000 // move trigger to center of element
 })
-    .setPin('container') // pins the element for the the scene's duration
-    .addTo(controller); // assign the scene to the controller
+          .setTween(tween)
+       //   .addIndicators({name: "staggering"}) // add indicators (requires plugin)
+          .addTo(controller);
+    
+});
+
 
   ;(function ( $, window, document, undefined ) {
 
