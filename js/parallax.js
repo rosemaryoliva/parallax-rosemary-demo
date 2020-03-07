@@ -4,7 +4,7 @@
  * @license MIT (https://github.com/pixelcog/parallax.js/blob/master/LICENSE)
  */
 
-$(function portfolioTransitionColor() {
+$(function secondtitleShow() {
     var controller = new ScrollMagic.Controller();    
 
     new ScrollMagic.Scene({
