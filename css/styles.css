@@ -20,7 +20,10 @@ html {
   scroll-behavior: smooth;
 }
 
-body {margin: 0;}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
 
 body {
   background: #2d2d37;
