@@ -4,6 +4,18 @@
  * @license MIT (https://github.com/pixelcog/parallax.js/blob/master/LICENSE)
  */
 
+ $(function titlePin() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 800})
+             .setPin("#pin1")
+            // .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
+            .addTo(controller);
+   });
+
+
+
 $(function secondtitleShow() {
     var controller = new ScrollMagic.Controller();    
 
@@ -11,7 +23,7 @@ $(function secondtitleShow() {
         triggerElement: "#activate",
         triggerHook: 0.1, // show, when scrolled 10% into view
         duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-        offset: 200 // move trigger to center of element
+        offset: 600 // move trigger to center of element
     })
     .setClassToggle("#scrollMagic", "visible") // add class to reveal
     //.addIndicators({name: "reveal"}) // add indicators (requires plugin)
@@ -19,23 +31,61 @@ $(function secondtitleShow() {
 });
 
 
-$(function slideBox() {
+$(function slideBox1() {
   var controller = new ScrollMagic.Controller();
   //tween
-  var tween = TweenMax.staggerFromTo(".box", 2, {left: 700}, {left: 0, ease: Power3.easeOut}, 0.15);
+  var tween = TweenMax.staggerFromTo(".box", 2, {left: 1000}, {left: 0, ease: Power3.easeOut}, 0.15);
 
   // build scene
   var scene = new ScrollMagic.Scene({
     triggerElement: "#trigger4", duration: 600,
     triggerHook: 0.1, // show, when scrolled 10% into view
     duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-    offset: 1000 // move trigger to center of element
+    offset: 200 // move trigger to center of element
 })
           .setTween(tween)
-       //   .addIndicators({name: "staggering"}) // add indicators (requires plugin)
+         // .addIndicators({name: "staggering"}) // add indicators (requires plugin)
           .addTo(controller);
     
 });
+
+$(function slideBox2() {
+  var controller = new ScrollMagic.Controller();
+  //tween
+  var tween = TweenMax.staggerFromTo(".box-2", 2, {left: 0}, {left: 1000, ease: Power3.easeOut}, 0.15);
+
+  // build scene
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger5", duration: 600,
+    triggerHook: 0.1, // show, when scrolled 10% into view
+    duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+    offset: 200 // move trigger to center of element
+})
+          .setTween(tween)
+          //.addIndicators({name: "staggering"}) // add indicators (requires plugin)
+          .addTo(controller);
+    
+});
+
+
+(function slideBox3() {
+  var controller = new ScrollMagic.Controller();
+  //tween
+  var tween = TweenMax.staggerFromTo(".box-3", 2, {left: 1000}, {left: 0, ease: Power3.easeOut}, 0.15);
+
+  // build scene
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger6", duration: 700,
+    triggerHook: 0.1, // show, when scrolled 10% into view
+    duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+    offset: 500 // move trigger to center of element
+})
+          .setTween(tween)
+         // .addIndicators({name: "staggering"}) // add indicators (requires plugin)
+          .addTo(controller);
+    
+});
+
 
 
   ;(function ( $, window, document, undefined ) {
@@ -443,4 +493,17 @@ $(function slideBox() {
       $('[data-parallax="scroll"]').parallax(); 
     });
 
+$(function lastParagraph() {
+    var controller = new ScrollMagic.Controller();    
+
+    new ScrollMagic.Scene({
+        triggerElement: "#activateLast",
+        triggerHook: 0.1, // show, when scrolled 10% into view
+        duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+        offset: 100 // move trigger to center of element
+    })
+    .setClassToggle("#lastP", "visible") // add class to reveal
+    .addIndicators({name: "reveal"}) // add indicators (requires plugin)
+    .addTo(controller);
+});
   }(jQuery, window, document));

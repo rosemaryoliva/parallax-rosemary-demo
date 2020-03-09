@@ -88,12 +88,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: middle;
-  padding-top: 30%;
   font-family: 'Odibee Sans', cursive;
   display: block;
   text-align: center;
   margin: 0;
-  transform: translateY(-50%);
   font-size: 14vw;
   color: white;
   font-weight: 400;
@@ -102,12 +100,13 @@ a {
 .title-2{
   font-family: 'Pacifico';
   color: lightblue;
-  padding: 20%;
-  opacity: 80%;
+  opacity: 90%;
   position: relative;
+  margin-top: 0;
   display: block;
   text-align: center;
   font-size: 5vw;
+  padding-bottom: 30%
 }
 
 .title-right{
@@ -146,13 +145,13 @@ p{
 }
 
 
-.box-3{
+.box-2{
+  position: relative;
   height: 400px;
   width: 400px;
   opacity: 70%;
   background-color: red;
   display: block;
-  float: left;
   transform: translateY(-50%);
 }
 
@@ -175,7 +174,6 @@ p{
   margin-bottom: 45px;
   font-size: 44px;
   text-transform: uppercase;
-  color: #424242;
 }
 
 #scrollMagic{
@@ -241,9 +239,19 @@ p{
   background-image: url("../images/bike-4.png");
   border: 2px solid black;
 }
+
 .last-paragraph{
   padding-bottom: 5px;
   max-width: 450px;
+}
+
+#lastP{
+  opacity: 0;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
 
