@@ -10,6 +10,7 @@
 
      var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 800})
              .setPin("#pin1")
+             .setClassToggle(".parallax-slider", "color")
             // .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
             .addTo(controller);
    });
@@ -52,7 +53,7 @@ $(function slideBox1() {
 $(function slideBox2() {
   var controller = new ScrollMagic.Controller();
   //tween
-  var tween = TweenMax.staggerFromTo(".box-2", 2, {left: 0}, {left: 1000, ease: Power3.easeOut}, 0.15);
+  var tween = TweenMax.staggerFromTo(".box-2", 2, {left: 0}, {left: 800, ease: Power3.easeOut}, 0.15);
 
   // build scene
   var scene = new ScrollMagic.Scene({
@@ -81,12 +82,25 @@ $(function slideBox2() {
     offset: 500 // move trigger to center of element
 })
           .setTween(tween)
-         // .addIndicators({name: "staggering"}) // add indicators (requires plugin)
+          .addIndicators({name: "staggering"}) // add indicators (requires plugin)
           .addTo(controller);
     
 });
 
 
+$(function lastParagraph() {
+    var controller = new ScrollMagic.Controller();    
+
+    new ScrollMagic.Scene({
+        triggerElement: "#activateLast",
+        triggerHook: 0.1, // show, when scrolled 10% into view
+        duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+        offset: 150 // move trigger to center of element
+    })
+    .setClassToggle("#lastP", "visible") // add class to reveal
+    //.addIndicators({name: "reveal"}) // add indicators (requires plugin)
+    .addTo(controller);
+});
 
   ;(function ( $, window, document, undefined ) {
 
@@ -116,7 +130,6 @@ $(function slideBox2() {
           clearTimeout(id);
         };
     }());
-
 // ////////////////////////////////////////////////////////////////////////////
     // Parallax Constructor
 
@@ -127,6 +140,7 @@ $(function slideBox2() {
         delete options.refresh;
         delete options.render;
         $.extend(this, options);
+        let currImgFunc = $('.parallax-slider:nth-child(1)').css('filter', 'grayscale(100%)')
       }
 
       this.$element = $(element);
@@ -244,7 +258,7 @@ $(function slideBox2() {
 
     $.extend(Parallax.prototype, {
       speed:    0.2,
-      bleed:    0,
+      bleed:    100,
       zIndex:   -100,
       iosFix:   true,
       androidFix: true,
@@ -492,18 +506,4 @@ $(function slideBox2() {
     $( function () { 
       $('[data-parallax="scroll"]').parallax(); 
     });
-
-$(function lastParagraph() {
-    var controller = new ScrollMagic.Controller();    
-
-    new ScrollMagic.Scene({
-        triggerElement: "#activateLast",
-        triggerHook: 0.1, // show, when scrolled 10% into view
-        duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-        offset: 100 // move trigger to center of element
-    })
-    .setClassToggle("#lastP", "visible") // add class to reveal
-    .addIndicators({name: "reveal"}) // add indicators (requires plugin)
-    .addTo(controller);
-});
   }(jQuery, window, document));
