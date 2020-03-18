@@ -10,11 +10,21 @@
 
      var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 800})
              .setPin("#pin1")
-             .setClassToggle(".parallax-slider", "color")
             // .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
             .addTo(controller);
    });
-
+$(function titleColor() { // wait for document ready
+  var controller = new ScrollMagic.Controller(); 
+     new ScrollMagic.Scene({
+              triggerElement: "#trigger",
+              triggerHook: 0.9, // show, when scrolled 10% into view
+              duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+              offset: 200 // move trigger to center of element
+            })
+            .setClassToggle("img", "color") // add class toggle
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+          }); 
 
 
 $(function secondtitleShow() {
@@ -79,14 +89,13 @@ $(function slideBox2() {
     triggerElement: "#trigger6", duration: 700,
     triggerHook: 0.1, // show, when scrolled 10% into view
     duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-    offset: 500 // move trigger to center of element
+    offset: 10 // move trigger to center of element
 })
           .setTween(tween)
-          .addIndicators({name: "staggering"}) // add indicators (requires plugin)
+         // .addIndicators({name: "staggering"}) // add indicators (requires plugin)
           .addTo(controller);
     
 });
-
 
 $(function lastParagraph() {
     var controller = new ScrollMagic.Controller();    
@@ -95,12 +104,240 @@ $(function lastParagraph() {
         triggerElement: "#activateLast",
         triggerHook: 0.1, // show, when scrolled 10% into view
         duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-        offset: 150 // move trigger to center of element
+        offset: 10 // move trigger to center of element
     })
     .setClassToggle("#lastP", "visible") // add class to reveal
     //.addIndicators({name: "reveal"}) // add indicators (requires plugin)
     .addTo(controller);
 });
+
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-1");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+              //.addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-2");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-3");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-4");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-5");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-6");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+            //  .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-7");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-8");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+            //  .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-9");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-10");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-11");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+            //  .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-12");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 60,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-13");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 60,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+             // .addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+$(function bikeDraw() { // wait for document ready
+     // build scene
+     var controller = new ScrollMagic.Controller(); 
+
+     var revealElements = document.getElementsByClassName("svg-elem-14");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+      new ScrollMagic.Scene({
+                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                offset: 50,                        // start a little later
+                triggerHook: 0.9,
+              })
+              .setClassToggle(revealElements[i], "visible") // add class toggle
+              //.addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+              .addTo(controller);
+    }
+   });
+
+
+   //paralax
 
   ;(function ( $, window, document, undefined ) {
 
